@@ -1,0 +1,155 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.cyber.funcional</groupId>
+	<artifactId>conquista</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<developers>
+		<developer>
+			<id>felipe</id>
+			<name>felipeGadelha</name>
+			<email>felipe.gadelha@portoseguro.com.br</email>
+			<roles>
+				<role>administrator</role>
+				<role>developer</role>
+			</roles>
+			<timezone>-3</timezone>
+		</developer>
+	</developers>
+
+	<properties>
+		<java.version>11</java.version>
+		<maven.compiler.target>${java.version}</maven.compiler.target>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+		<cucumber.version>6.10.1</cucumber.version>
+		<!-- <maven.compiler.version></maven.compiler.version> -->
+		<maven.surefire.version>2.22.0</maven.surefire.version>
+<!-- 		<maven.surefire.version>3.0.0-M5</maven.surefire.version> -->
+	</properties>
+
+	<dependencies><!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-java -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-java</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-junit -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-junit</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.cucumber/cucumber-testng -->
+		<dependency>
+			<groupId>io.cucumber</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>${cucumber.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>7.4.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>tech.grasshopper</groupId>
+			<artifactId>extentreports-cucumber6-adapter</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-simple</artifactId>
+			<version>1.7.30</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.141.59</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>4.1.2</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/ru.yandex.qatools.ashot/ashot -->
+		<dependency>
+			<groupId>ru.yandex.qatools.ashot</groupId>
+			<artifactId>ashot</artifactId>
+			<version>1.5.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.thoughtworks.xstream/xstream -->
+		<dependency>
+			<groupId>com.thoughtworks.xstream</groupId>
+			<artifactId>xstream</artifactId>
+			<version>1.4.15</version>
+		</dependency>
+
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven.surefire.version}</version>
+				<configuration>
+					<parallel>Tests</parallel>
+					<threadCount>2</threadCount>
+					<perCoreThreadCount>true</perCoreThreadCount>
+					<useUnlimitedThreads>false</useUnlimitedThreads>
+<!-- 					<includes> -->
+<!-- 						<include>**/testng.xml</include> -->
+<!-- 					</includes> -->
+<!-- 					<suiteXmlFiles> -->
+<!-- 					<suiteXmlFile>src/test/resources/testng.xml</suiteXmlFile> -->
+<!-- 					</suiteXmlFiles> -->
+<!-- 					<properties> -->
+<!-- 						<property> -->
+<!-- 							<name>dataproviderthreadcount</name> -->
+<!-- 							<value>${threadcount}</value> -->
+<!-- 						</property> -->
+<!-- 					</properties> -->
+				</configuration>
+			</plugin>
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.apache.maven.plugins</groupId> -->
+<!-- 				<artifactId>maven-failsafe-plugin</artifactId> -->
+<!-- 				<version>3.0.0-M5</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<goals> -->
+<!-- 							<goal>integration-test</goal> -->
+<!-- 							<goal>verify</goal> -->
+<!-- 						</goals> -->
+<!-- 						<configuration> -->
+<!-- 						<properties> -->
+<!-- 							<property> -->
+<!-- 								<name>dataproviderthreadcount</name> -->
+<!-- 								<value>2</value> -->
+<!-- 							</property> -->
+<!-- 						</properties> -->
+<!-- 							<includes> -->
+<!-- 								<include>**/RunnerTestNg.java</include> -->
+<!-- 							</includes> -->
+<!-- 							<parallel>methods</parallel> -->
+<!-- 							<threadCount>2</threadCount> -->
+<!-- 							<perCoreThreadCount>false</perCoreThreadCount> -->
+<!-- 						</configuration> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 			</plugin> -->
+		</plugins>
+	</build>
+
+</project>
